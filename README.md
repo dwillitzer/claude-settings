@@ -68,15 +68,26 @@ echo ".claude/settings.local.json" >> .gitignore
 
 This configuration includes:
 
-### Allow List (600+ patterns)
-- **Docker operations**: Container management, logs, exec, compose, volumes, networks, images
-- **Git operations**: All common git commands and workflows (status, add, commit, push, pull, branch, merge, etc.)
-- **SSH/Remote access**: SSH connections, SCP, rsync to specified servers
-- **File operations**: Read, write, edit, search, manipulate files (cat, grep, sed, awk, etc.)
-- **Development tools**: npm, node, python, make, yarn, pnpm, testing frameworks (jest, pytest)
-- **System utilities**: Process management, network tools, system info (ps, lsof, netstat, df, du)
-- **Web tools**: curl, wget, API interactions, http-server
-- **Database tools**: psql, pg_dump, redis-cli operations
+### Allow List (900+ patterns)
+- **Docker & Container Orchestration**: Docker (containers, compose, volumes, networks), Kubernetes (kubectl, helm), Podman
+- **Git & GitHub**: All git operations, GitHub CLI (gh) for PRs, issues, repos, workflows
+- **Programming Languages & Package Managers**: 
+  - JavaScript/TypeScript: npm, yarn, pnpm, bun, deno
+  - Python: pip, pipenv, poetry, pyenv
+  - Rust: cargo, rustc, rustup
+  - Go: go mod, go build, go test
+  - Ruby: gem, bundle, rbenv
+  - Java: maven, gradle, javac
+  - PHP: composer, php
+- **Cloud Provider CLIs**: AWS CLI, Google Cloud SDK, Azure CLI, Vercel, Netlify, Heroku
+- **Database Tools**: PostgreSQL, MySQL, MongoDB, SQLite, Redis with full client support
+- **Development Environment**: Version managers (nvm, pyenv, rbenv), tmux, screen, direnv
+- **File & Text Processing**: Read/write/edit files, grep, sed, awk, jq, yq, pipe operations
+- **System Package Management**: apt, yum, dnf, brew, snap (with controlled sudo access)
+- **Web & API Tools**: curl (all methods), wget, API testing, http-server
+- **SSH/Remote Access**: SSH connections, SCP, rsync to specified servers
+- **System Utilities**: Process management, network tools, system monitoring
+- **Data Processing**: tar, zip, gzip, 7z, JSON/YAML processing
 - **Claude-specific tools**: Read, Edit, MultiEdit, Glob, Grep, WebFetch, WebSearch, TodoRead, TodoWrite, Task
 
 ### Deny List (Security-focused)
@@ -98,6 +109,8 @@ To customize for your needs:
 3. Use the Tool(specifier) format:
    - `"Bash(git *)"` - Allow all git commands
    - `"Bash(rm -rf /)"` - Deny specific dangerous commands
+   - `"Bash(* | grep *)"` - Allow pipe operations
+   - `"Bash(kubectl get pods)"` - Allow specific Kubernetes commands
    - `"Read(**)"` - Allow reading any file
    - `"WebFetch(domain:*.example.com)"` - Allow fetching from specific domains
 
@@ -115,6 +128,92 @@ Common customizations:
 - Always use `settings.local.json` for sensitive project-specific settings
 - Regularly audit the allow list to ensure it matches your needs
 - Consider using more restrictive settings for production environments
+
+### Sudo Permissions Warning
+
+This configuration includes limited sudo access for package management only:
+- `sudo apt install`, `sudo yum install`, etc. are allowed
+- These are restricted to package installation commands
+- **WARNING**: Review these permissions carefully for your environment
+- Consider removing sudo permissions if not needed
+- Never allow broad sudo access like `"Bash(sudo *)"` 
+
+For maximum security, use a separate settings.local.json without sudo permissions for sensitive projects.
+
+## Common Workflows
+
+These permissions enable typical development workflows:
+
+### Full-Stack Development
+```bash
+# Clone and setup a project
+git clone https://github.com/user/project.git
+cd project
+npm install
+
+# Run development servers
+npm run dev
+# or
+docker-compose up -d
+
+# Check logs
+docker logs app-container | grep error
+tail -f logs/app.log
+```
+
+### Working with GitHub
+```bash
+# Create a PR from Claude Code
+gh pr create --title "Fix bug" --body "Description"
+
+# Review PR status
+gh pr status
+gh pr checks
+
+# Work with issues
+gh issue list --label bug
+gh issue create --title "New feature"
+```
+
+### Cloud Deployments
+```bash
+# Deploy to AWS
+aws s3 sync ./build s3://my-bucket
+aws cloudformation deploy --template-file template.yml
+
+# Deploy to Vercel
+vercel --prod
+
+# Google Cloud operations
+gcloud app deploy
+gcloud compute instances list
+```
+
+### Database Operations
+```bash
+# PostgreSQL backup
+pg_dump -h localhost -U user dbname > backup.sql
+
+# MongoDB operations
+mongosh --eval "db.collection.find()"
+mongodump --db mydb --out ./backup
+
+# Redis operations
+redis-cli SET key value
+redis-cli GET key
+```
+
+### Container Orchestration
+```bash
+# Kubernetes deployment
+kubectl apply -f deployment.yaml
+kubectl get pods
+kubectl logs pod-name
+
+# Helm charts
+helm install myapp ./chart
+helm upgrade myapp ./chart
+```
 
 ## References
 

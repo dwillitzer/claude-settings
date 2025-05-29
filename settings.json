@@ -83,6 +83,71 @@
       "Bash(docker info*)",
       "Bash(docker version*)",
       
+      // ===== CONTAINER ORCHESTRATION =====
+      // Kubernetes
+      "Bash(kubectl *)",
+      "Bash(kubectl get *)",
+      "Bash(kubectl describe *)",
+      "Bash(kubectl create *)",
+      "Bash(kubectl apply *)",
+      "Bash(kubectl delete *)",
+      "Bash(kubectl exec *)",
+      "Bash(kubectl logs *)",
+      "Bash(kubectl port-forward *)",
+      "Bash(kubectl cp *)",
+      "Bash(kubectl scale *)",
+      "Bash(kubectl rollout *)",
+      "Bash(kubectl set *)",
+      "Bash(kubectl edit *)",
+      "Bash(kubectl patch *)",
+      "Bash(kubectl label *)",
+      "Bash(kubectl annotate *)",
+      "Bash(kubectl expose *)",
+      "Bash(kubectl run *)",
+      "Bash(kubectl proxy*)",
+      "Bash(kubectl config *)",
+      "Bash(kubectl cluster-info*)",
+      "Bash(kubectl top *)",
+      "Bash(kubectl api-resources*)",
+      "Bash(kubectl explain *)",
+      "Bash(kubectl auth *)",
+      "Bash(kubectl version*)",
+      
+      // Helm
+      "Bash(helm *)",
+      "Bash(helm install *)",
+      "Bash(helm upgrade *)",
+      "Bash(helm list*)",
+      "Bash(helm repo *)",
+      "Bash(helm search *)",
+      "Bash(helm show *)",
+      "Bash(helm pull *)",
+      "Bash(helm delete *)",
+      "Bash(helm rollback *)",
+      "Bash(helm status *)",
+      "Bash(helm test *)",
+      "Bash(helm template *)",
+      "Bash(helm dependency *)",
+      "Bash(helm package *)",
+      "Bash(helm lint *)",
+      "Bash(helm create *)",
+      
+      // Minikube
+      "Bash(minikube *)",
+      "Bash(minikube start*)",
+      "Bash(minikube stop*)",
+      "Bash(minikube status*)",
+      "Bash(minikube dashboard*)",
+      "Bash(minikube service *)",
+      "Bash(minikube tunnel*)",
+      
+      // Kind
+      "Bash(kind *)",
+      "Bash(kind create cluster*)",
+      "Bash(kind delete cluster*)",
+      "Bash(kind get clusters*)",
+      "Bash(kind load docker-image *)",
+      
       // ===== SSH COMMANDS =====
       "Bash(ssh gmktec-k9 *)",
       "Bash(ssh root@gmktec-k9 *)",
@@ -281,6 +346,74 @@
       "Bash(node scripts/*)",
       "Bash(node *.js*)",
       
+      // ===== PACKAGE MANAGERS & LANGUAGE TOOLS =====
+      // Rust
+      "Bash(cargo *)",
+      "Bash(cargo build*)",
+      "Bash(cargo run*)",
+      "Bash(cargo test*)",
+      "Bash(cargo check*)",
+      "Bash(cargo fmt*)",
+      "Bash(cargo clippy*)",
+      "Bash(rustc *)",
+      "Bash(rustup *)",
+      
+      // Go
+      "Bash(go *)",
+      "Bash(go build*)",
+      "Bash(go run*)",
+      "Bash(go test*)",
+      "Bash(go get*)",
+      "Bash(go mod*)",
+      "Bash(go fmt*)",
+      "Bash(go vet*)",
+      
+      // Ruby
+      "Bash(gem *)",
+      "Bash(gem install*)",
+      "Bash(gem list*)",
+      "Bash(bundle *)",
+      "Bash(bundle install*)",
+      "Bash(bundle exec*)",
+      "Bash(ruby *)",
+      "Bash(rake *)",
+      
+      // Java
+      "Bash(java *)",
+      "Bash(javac *)",
+      "Bash(mvn *)",
+      "Bash(mvn clean*)",
+      "Bash(mvn install*)",
+      "Bash(mvn test*)",
+      "Bash(gradle *)",
+      "Bash(gradle build*)",
+      "Bash(gradle test*)",
+      
+      // PHP
+      "Bash(php *)",
+      "Bash(php -r *)",
+      "Bash(php -v*)",
+      "Bash(composer *)",
+      "Bash(composer install*)",
+      "Bash(composer update*)",
+      "Bash(composer require*)",
+      
+      // Bun
+      "Bash(bun *)",
+      "Bash(bun install*)",
+      "Bash(bun run*)",
+      "Bash(bun test*)",
+      "Bash(bun build*)",
+      "Bash(bunx *)",
+      
+      // Deno
+      "Bash(deno *)",
+      "Bash(deno run*)",
+      "Bash(deno test*)",
+      "Bash(deno fmt*)",
+      "Bash(deno lint*)",
+      "Bash(deno compile*)",
+      
       // ===== ENVIRONMENT VARIABLES =====
       "Bash(echo $*)",
       "Bash(echo \"$*\")",
@@ -315,6 +448,10 @@
       "Bash(* | jq '.*')",
       "Bash(* | jq \".*\")",
       "Bash(* | jq '. | *')",
+      "Bash(yq *)",
+      "Bash(yq eval *)",
+      "Bash(yq -i *)",
+      "Bash(* | yq*)",
       
       // ===== PROCESS MANAGEMENT =====
       "Bash(ps *)",
@@ -373,7 +510,8 @@
       "Bash(ip *)",
       "Bash(ifconfig*)",
       
-      // ===== PACKAGE MANAGERS =====
+      // ===== CONTROLLED SYSTEM ADMINISTRATION =====
+      // Package Management with sudo
       "Bash(apt *)",
       "Bash(apt-get *)",
       "Bash(apt update*)",
@@ -383,8 +521,29 @@
       "Bash(apt list *)",
       "Bash(sudo apt *)",
       "Bash(sudo apt-get *)",
+      "Bash(sudo apt update*)",
+      "Bash(sudo apt install *)",
+      "Bash(sudo apt upgrade*)",
+      "Bash(sudo apt autoremove*)",
+      "Bash(sudo apt autoclean*)",
       "Bash(dpkg *)",
+      "Bash(dpkg -l*)",
+      "Bash(dpkg -i *)",
+      "Bash(sudo dpkg -i *)",
       "Bash(snap *)",
+      "Bash(sudo snap install *)",
+      "Bash(sudo snap remove *)",
+      "Bash(brew *)",
+      "Bash(brew install *)",
+      "Bash(brew update*)",
+      "Bash(brew upgrade*)",
+      "Bash(brew list*)",
+      "Bash(yum *)",
+      "Bash(sudo yum install *)",
+      "Bash(sudo yum update*)",
+      "Bash(dnf *)",
+      "Bash(sudo dnf install *)",
+      "Bash(sudo dnf update*)",
       
       // ===== OPENSSL =====
       "Bash(openssl *)",
@@ -454,12 +613,34 @@
       "Bash(journalctl -f*)",
       "Bash(journalctl --since *)",
       
-      // ===== COMPRESSION =====
+      // ===== COMPRESSION & DATA PROCESSING =====
       "Bash(tar *)",
+      "Bash(tar -czf *)",
+      "Bash(tar -xzf *)",
+      "Bash(tar -cjf *)",
+      "Bash(tar -xjf *)",
+      "Bash(tar -tvf *)",
+      "Bash(tar --exclude=* *)",
       "Bash(gzip *)",
+      "Bash(gzip -d *)",
+      "Bash(gzip -9 *)",
       "Bash(gunzip *)",
       "Bash(zip *)",
+      "Bash(zip -r *)",
+      "Bash(zip -u *)",
+      "Bash(zip -d *)",
       "Bash(unzip *)",
+      "Bash(unzip -l *)",
+      "Bash(unzip -o *)",
+      "Bash(unzip -d * *)",
+      "Bash(7z *)",
+      "Bash(7z a *)",
+      "Bash(7z x *)",
+      "Bash(7z l *)",
+      "Bash(bzip2 *)",
+      "Bash(bunzip2 *)",
+      "Bash(xz *)",
+      "Bash(unxz *)",
       
       // ===== TEXT PROCESSING =====
       "Bash(tr *)",
@@ -492,11 +673,55 @@
       "Bash(time *)",
       "Bash(watch *)",
       
-      // Database operations
+      // ===== DATABASE TOOLS =====
+      // PostgreSQL
       "Bash(psql *)",
+      "Bash(psql -h * -U * -d *)",
+      "Bash(psql -c *)",
+      "Bash(psql -f *)",
+      "Bash(pg_dump *)",
+      "Bash(pg_restore *)",
+      "Bash(pg_dumpall*)",
+      "Bash(createdb *)",
+      "Bash(dropdb *)",
       "Bash(docker exec * psql *)",
       "Bash(docker exec * pg_dump *)",
       "Bash(docker exec * pg_restore *)",
+      
+      // MySQL
+      "Bash(mysql *)",
+      "Bash(mysql -u * -p*)",
+      "Bash(mysql -e *)",
+      "Bash(mysqldump *)",
+      "Bash(mysqlimport *)",
+      "Bash(mysqladmin *)",
+      "Bash(docker exec * mysql *)",
+      "Bash(docker exec * mysqldump *)",
+      
+      // MongoDB
+      "Bash(mongo *)",
+      "Bash(mongosh *)",
+      "Bash(mongodump *)",
+      "Bash(mongorestore *)",
+      "Bash(mongoexport *)",
+      "Bash(mongoimport *)",
+      "Bash(mongod *)",
+      "Bash(docker exec * mongo *)",
+      "Bash(docker exec * mongosh *)",
+      
+      // SQLite
+      "Bash(sqlite3 *)",
+      "Bash(sqlite3 * .dump*)",
+      "Bash(sqlite3 * < *)",
+      "Bash(sqlite3 * '.tables'*)",
+      "Bash(sqlite3 * '.schema'*)",
+      
+      // Redis
+      "Bash(redis-cli *)",
+      "Bash(redis-cli -h * -p *)",
+      "Bash(redis-cli ping*)",
+      "Bash(redis-cli info*)",
+      "Bash(redis-cli monitor*)",
       "Bash(docker exec * redis-cli *)",
       
       // Environment variable generation
@@ -519,6 +744,7 @@
       "Bash(npx jest *)",
       "Bash(npm run test:*)",
       
+      // ===== DEVELOPMENT ENVIRONMENT TOOLS =====
       // Python operations
       "Bash(python *)",
       "Bash(python3 *)",
@@ -526,6 +752,56 @@
       "Bash(pip3 *)",
       "Bash(python -m *)",
       "Bash(python3 -m *)",
+      
+      // Version Managers
+      "Bash(nvm *)",
+      "Bash(nvm install *)",
+      "Bash(nvm use *)",
+      "Bash(nvm ls*)",
+      "Bash(nvm alias *)",
+      "Bash(nvm current*)",
+      "Bash(pyenv *)",
+      "Bash(pyenv install *)",
+      "Bash(pyenv global *)",
+      "Bash(pyenv local *)",
+      "Bash(pyenv versions*)",
+      "Bash(pyenv which *)",
+      "Bash(rbenv *)",
+      "Bash(rbenv install *)",
+      "Bash(rbenv global *)",
+      "Bash(rbenv local *)",
+      "Bash(rbenv versions*)",
+      "Bash(rbenv which *)",
+      "Bash(rvm *)",
+      "Bash(rvm install *)",
+      "Bash(rvm use *)",
+      "Bash(rvm list*)",
+      "Bash(asdf *)",
+      "Bash(asdf install *)",
+      "Bash(asdf global *)",
+      "Bash(asdf local *)",
+      "Bash(asdf list*)",
+      
+      // Environment Management
+      "Bash(direnv *)",
+      "Bash(direnv allow*)",
+      "Bash(direnv deny*)",
+      "Bash(direnv status*)",
+      "Bash(direnv reload*)",
+      
+      // Terminal Multiplexers
+      "Bash(tmux *)",
+      "Bash(tmux new*)",
+      "Bash(tmux attach*)",
+      "Bash(tmux ls*)",
+      "Bash(tmux kill-session*)",
+      "Bash(tmux send-keys *)",
+      "Bash(tmux capture-pane*)",
+      "Bash(screen *)",
+      "Bash(screen -S *)",
+      "Bash(screen -r *)",
+      "Bash(screen -ls*)",
+      "Bash(screen -X *)",
       
       // Port checking
       "Bash(lsof -i :*)",
@@ -718,6 +994,86 @@
       "WebFetch(domain:api.openai.com)",
       "WebFetch(domain:api.anthropic.com)",
       "WebSearch(**)",
+      
+      // ===== CLOUD PROVIDER CLIs =====
+      // AWS CLI
+      "Bash(aws *)",
+      "Bash(aws s3 *)",
+      "Bash(aws ec2 *)",
+      "Bash(aws lambda *)",
+      "Bash(aws dynamodb *)",
+      "Bash(aws rds *)",
+      "Bash(aws iam *)",
+      "Bash(aws cloudformation *)",
+      "Bash(aws configure*)",
+      "Bash(aws sts *)",
+      "Bash(aws logs *)",
+      "Bash(aws ecr *)",
+      "Bash(aws ecs *)",
+      "Bash(aws eks *)",
+      
+      // Google Cloud
+      "Bash(gcloud *)",
+      "Bash(gcloud auth *)",
+      "Bash(gcloud config *)",
+      "Bash(gcloud compute *)",
+      "Bash(gcloud container *)",
+      "Bash(gcloud app *)",
+      "Bash(gcloud functions *)",
+      "Bash(gcloud storage *)",
+      "Bash(gcloud sql *)",
+      "Bash(gcloud run *)",
+      "Bash(gcloud projects *)",
+      "Bash(gcloud services *)",
+      "Bash(gsutil *)",
+      
+      // Azure CLI
+      "Bash(az *)",
+      "Bash(az login*)",
+      "Bash(az account *)",
+      "Bash(az group *)",
+      "Bash(az vm *)",
+      "Bash(az storage *)",
+      "Bash(az webapp *)",
+      "Bash(az functionapp *)",
+      "Bash(az sql *)",
+      "Bash(az aks *)",
+      "Bash(az acr *)",
+      "Bash(az keyvault *)",
+      
+      // Vercel
+      "Bash(vercel *)",
+      "Bash(vercel deploy*)",
+      "Bash(vercel dev*)",
+      "Bash(vercel build*)",
+      "Bash(vercel env *)",
+      "Bash(vercel secrets *)",
+      "Bash(vercel domains *)",
+      "Bash(vercel logs*)",
+      "Bash(vc *)",
+      
+      // Netlify
+      "Bash(netlify *)",
+      "Bash(netlify deploy*)",
+      "Bash(netlify dev*)",
+      "Bash(netlify build*)",
+      "Bash(netlify functions *)",
+      "Bash(netlify env *)",
+      "Bash(netlify sites *)",
+      "Bash(netlify status*)",
+      "Bash(ntl *)",
+      
+      // Heroku
+      "Bash(heroku *)",
+      "Bash(heroku create*)",
+      "Bash(heroku deploy*)",
+      "Bash(heroku logs*)",
+      "Bash(heroku ps*)",
+      "Bash(heroku config*)",
+      "Bash(heroku addons*)",
+      "Bash(heroku run *)",
+      "Bash(heroku domains*)",
+      "Bash(heroku releases*)",
       
       // ===== TODO TOOLS =====
       "TodoRead()",
