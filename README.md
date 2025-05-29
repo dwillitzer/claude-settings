@@ -39,14 +39,27 @@ Settings files are merged together, with higher precedence files overriding valu
 - Individual developers to override both for their local environment
 - Enterprises to enforce security policies
 
+## Available Settings Files
+
+This repository provides two versions of the settings file:
+
+1. **settings.json** - Clean configuration without comments, ideal for direct use
+2. **settings.jsonc** - Same configuration with detailed comments explaining each section
+
+The JSONC version is helpful when you want to understand and customize the settings, while the regular JSON version is cleaner for production use.
+
 ## Using These Settings
 
 ### Option 1: As Team/Project Settings
-Copy `settings.json` to your project's `.claude/settings.json`:
+Copy `settings.json` (or `settings.jsonc` if you prefer the commented version) to your project's `.claude/settings.json`:
 
 ```bash
 mkdir -p .claude
+# For clean version without comments
 curl -o .claude/settings.json https://raw.githubusercontent.com/dwillitzer/claude-settings/main/settings.json
+
+# OR for commented version
+curl -o .claude/settings.json https://raw.githubusercontent.com/dwillitzer/claude-settings/main/settings.jsonc
 ```
 
 ### Option 2: As Global User Settings
@@ -54,7 +67,11 @@ Copy to your home directory:
 
 ```bash
 mkdir -p ~/.claude
+# For clean version without comments
 curl -o ~/.claude/settings.json https://raw.githubusercontent.com/dwillitzer/claude-settings/main/settings.json
+
+# OR for commented version
+curl -o ~/.claude/settings.json https://raw.githubusercontent.com/dwillitzer/claude-settings/main/settings.jsonc
 ```
 
 ### Option 3: As Local Overrides

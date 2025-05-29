@@ -1,6 +1,8 @@
 {
   "permissions": {
     "allow": [
+      // ===== DOCKER COMMANDS =====
+      // Basic Docker operations
       "Bash(docker ps)",
       "Bash(docker ps *)",
       "Bash(docker ps -a*)",
@@ -8,6 +10,7 @@
       "Bash(docker ps | grep*)",
       "Bash(docker ps -a | grep*)",
       
+      // Docker logs
       "Bash(docker logs *)",
       "Bash(docker logs * --tail*)",
       "Bash(docker logs * --tail=*)",
@@ -16,6 +19,7 @@
       "Bash(docker logs * | tail*)",
       "Bash(docker logs * | head*)",
       
+      // Docker exec
       "Bash(docker exec *)",
       "Bash(docker exec * printenv*)",
       "Bash(docker exec * cat *)",
@@ -28,6 +32,7 @@
       "Bash(docker exec * /bin/sh *)",
       "Bash(docker exec * printenv | grep*)",
       
+      // Docker container management
       "Bash(docker start *)",
       "Bash(docker stop *)",
       "Bash(docker restart *)",
@@ -35,16 +40,19 @@
       "Bash(docker rm -f *)",
       "Bash(docker kill *)",
       
+      // Docker inspection
       "Bash(docker inspect *)",
       "Bash(docker inspect * | jq*)",
       "Bash(docker inspect * | grep*)",
       
+      // Docker volumes
       "Bash(docker volume ls*)",
       "Bash(docker volume inspect *)",
       "Bash(docker volume rm *)",
       "Bash(docker volume create *)",
       "Bash(docker volume prune*)",
       
+      // Docker images
       "Bash(docker images*)",
       "Bash(docker pull *)",
       "Bash(docker build *)",
@@ -52,6 +60,7 @@
       "Bash(docker tag *)",
       "Bash(docker push *)",
       
+      // Docker compose
       "Bash(docker compose *)",
       "Bash(docker compose up*)",
       "Bash(docker compose up -d*)",
@@ -69,10 +78,13 @@
       "Bash(docker compose build --no-cache*)",
       "Bash(docker-compose *)",
       
+      // Docker system
       "Bash(docker system *)",
       "Bash(docker info*)",
       "Bash(docker version*)",
       
+      // ===== CONTAINER ORCHESTRATION =====
+      // Kubernetes
       "Bash(kubectl *)",
       "Bash(kubectl get *)",
       "Bash(kubectl describe *)",
@@ -101,6 +113,7 @@
       "Bash(kubectl auth *)",
       "Bash(kubectl version*)",
       
+      // Helm
       "Bash(helm *)",
       "Bash(helm install *)",
       "Bash(helm upgrade *)",
@@ -119,6 +132,7 @@
       "Bash(helm lint *)",
       "Bash(helm create *)",
       
+      // Minikube
       "Bash(minikube *)",
       "Bash(minikube start*)",
       "Bash(minikube stop*)",
@@ -127,12 +141,14 @@
       "Bash(minikube service *)",
       "Bash(minikube tunnel*)",
       
+      // Kind
       "Bash(kind *)",
       "Bash(kind create cluster*)",
       "Bash(kind delete cluster*)",
       "Bash(kind get clusters*)",
       "Bash(kind load docker-image *)",
       
+      // ===== SSH COMMANDS =====
       "Bash(ssh gmktec-k9 *)",
       "Bash(ssh root@gmktec-k9 *)",
       "Bash(ssh gmktec-k9 \"*\")",
@@ -144,6 +160,7 @@
       "Bash(ssh * \"bash -s\" << *)",
       "Bash(ssh * \"sudo *\")",
       
+      // SCP and RSYNC
       "Bash(scp * root@gmktec-k9:*)",
       "Bash(scp root@gmktec-k9:* *)",
       "Bash(rsync *)",
@@ -151,6 +168,7 @@
       "Bash(rsync -avz --exclude=* *)",
       "Bash(rsync -avz --delete *)",
       
+      // ===== GIT COMMANDS =====
       "Bash(git status*)",
       "Bash(git add *)",
       "Bash(git add .*)",
@@ -196,6 +214,7 @@
       "Bash(git clone *)",
       "Bash(git init*)",
       
+      // ===== FILE OPERATIONS =====
       "Bash(ls*)",
       "Bash(ls -la*)",
       "Bash(ls -l*)",
@@ -264,6 +283,7 @@
       "Bash(realpath *)",
       "Bash(readlink *)",
       
+      // ===== CURL COMMANDS =====
       "Bash(curl *)",
       "Bash(curl -s *)",
       "Bash(curl -S *)",
@@ -298,6 +318,7 @@
       "Bash(curl * | head*)",
       "Bash(curl * | tail*)",
       
+      // ===== NPM AND NODE =====
       "Bash(npm *)",
       "Bash(npm install*)",
       "Bash(npm install --save*)",
@@ -325,6 +346,8 @@
       "Bash(node scripts/*)",
       "Bash(node *.js*)",
       
+      // ===== PACKAGE MANAGERS & LANGUAGE TOOLS =====
+      // Rust
       "Bash(cargo *)",
       "Bash(cargo build*)",
       "Bash(cargo run*)",
@@ -335,6 +358,7 @@
       "Bash(rustc *)",
       "Bash(rustup *)",
       
+      // Go
       "Bash(go *)",
       "Bash(go build*)",
       "Bash(go run*)",
@@ -344,6 +368,7 @@
       "Bash(go fmt*)",
       "Bash(go vet*)",
       
+      // Ruby
       "Bash(gem *)",
       "Bash(gem install*)",
       "Bash(gem list*)",
@@ -353,6 +378,7 @@
       "Bash(ruby *)",
       "Bash(rake *)",
       
+      // Java
       "Bash(java *)",
       "Bash(javac *)",
       "Bash(mvn *)",
@@ -363,6 +389,7 @@
       "Bash(gradle build*)",
       "Bash(gradle test*)",
       
+      // PHP
       "Bash(php *)",
       "Bash(php -r *)",
       "Bash(php -v*)",
@@ -371,6 +398,7 @@
       "Bash(composer update*)",
       "Bash(composer require*)",
       
+      // Bun
       "Bash(bun *)",
       "Bash(bun install*)",
       "Bash(bun run*)",
@@ -378,6 +406,7 @@
       "Bash(bun build*)",
       "Bash(bunx *)",
       
+      // Deno
       "Bash(deno *)",
       "Bash(deno run*)",
       "Bash(deno test*)",
@@ -385,6 +414,7 @@
       "Bash(deno lint*)",
       "Bash(deno compile*)",
       
+      // ===== ENVIRONMENT VARIABLES =====
       "Bash(echo $*)",
       "Bash(echo \"$*\")",
       "Bash(echo '$*')",
@@ -399,11 +429,13 @@
       "Bash(source *)",
       "Bash(. *)",
       
+      // With specific env vars from our session
       "Bash(STACK_MANAGER_* npm *)",
       "Bash(N8N_* npm *)",
       "Bash(POSTGRES_* npm *)",
       "Bash(NODE_ENV=* npm *)",
       
+      // ===== JSON PROCESSING =====
       "Bash(jq *)",
       "Bash(jq .*)",
       "Bash(jq -r *)",
@@ -421,6 +453,7 @@
       "Bash(yq -i *)",
       "Bash(* | yq*)",
       
+      // ===== PROCESS MANAGEMENT =====
       "Bash(ps *)",
       "Bash(ps aux*)",
       "Bash(ps -ef*)",
@@ -437,6 +470,7 @@
       "Bash(sleep *)",
       "Bash(wait*)",
       
+      // ===== SYSTEM COMMANDS =====
       "Bash(date*)",
       "Bash(date +*)",
       "Bash(whoami*)",
@@ -459,6 +493,7 @@
       "Bash(alias*)",
       "Bash(type *)",
       
+      // ===== NETWORK COMMANDS =====
       "Bash(ping *)",
       "Bash(netstat *)",
       "Bash(ss *)",
@@ -475,6 +510,8 @@
       "Bash(ip *)",
       "Bash(ifconfig*)",
       
+      // ===== CONTROLLED SYSTEM ADMINISTRATION =====
+      // Package Management with sudo
       "Bash(apt *)",
       "Bash(apt-get *)",
       "Bash(apt update*)",
@@ -508,12 +545,14 @@
       "Bash(sudo dnf install *)",
       "Bash(sudo dnf update*)",
       
+      // ===== OPENSSL =====
       "Bash(openssl *)",
       "Bash(openssl rand *)",
       "Bash(openssl x509 *)",
       "Bash(openssl req *)",
       "Bash(openssl genrsa *)",
       
+      // ===== GITHUB CLI =====
       "Bash(gh *)",
       "Bash(gh auth *)",
       "Bash(gh auth login*)",
@@ -532,6 +571,7 @@
       "Bash(gh workflow *)",
       "Bash(gh release *)",
       
+      // ===== SCRIPT EXECUTION =====
       "Bash(bash *)",
       "Bash(sh *)",
       "Bash(./deploy-latest-updates.sh*)",
@@ -541,6 +581,7 @@
       "Bash(sh scripts/*)",
       "Bash(source scripts/*)",
       
+      // ===== PIPING AND REDIRECTION =====
       "Bash(* | *)",
       "Bash(* > *)",
       "Bash(* >> *)",
@@ -553,6 +594,7 @@
       "Bash(* || *)",
       "Bash(* ; *)",
       
+      // ===== SUDO COMMANDS (LIMITED) =====
       "Bash(sudo docker *)",
       "Bash(sudo systemctl *)",
       "Bash(sudo journalctl *)",
@@ -560,6 +602,7 @@
       "Bash(sudo bash -c *)",
       "Bash(sudo sh -c *)",
       
+      // ===== SYSTEMCTL AND JOURNALCTL =====
       "Bash(systemctl *)",
       "Bash(systemctl status *)",
       "Bash(systemctl start *)",
@@ -570,6 +613,7 @@
       "Bash(journalctl -f*)",
       "Bash(journalctl --since *)",
       
+      // ===== COMPRESSION & DATA PROCESSING =====
       "Bash(tar *)",
       "Bash(tar -czf *)",
       "Bash(tar -xzf *)",
@@ -598,6 +642,7 @@
       "Bash(xz *)",
       "Bash(unxz *)",
       
+      // ===== TEXT PROCESSING =====
       "Bash(tr *)",
       "Bash(fold *)",
       "Bash(column *)",
@@ -608,6 +653,7 @@
       "Bash(tee *)",
       "Bash(xargs *)",
       
+      // ===== MACROS AND SPECIAL =====
       "Bash(printf *)",
       "Bash(test *)",
       "Bash([ *)",
@@ -620,12 +666,15 @@
       "Bash(bc *)",
       "Bash(expr *)",
       
+      // ===== SPECIFIC COMMANDS FROM SESSION =====
       "Bash(open -a Docker*)",
       "Bash(open -a *)",
       "Bash(timeout *)",
       "Bash(time *)",
       "Bash(watch *)",
       
+      // ===== DATABASE TOOLS =====
+      // PostgreSQL
       "Bash(psql *)",
       "Bash(psql -h * -U * -d *)",
       "Bash(psql -c *)",
@@ -639,6 +688,7 @@
       "Bash(docker exec * pg_dump *)",
       "Bash(docker exec * pg_restore *)",
       
+      // MySQL
       "Bash(mysql *)",
       "Bash(mysql -u * -p*)",
       "Bash(mysql -e *)",
@@ -648,6 +698,7 @@
       "Bash(docker exec * mysql *)",
       "Bash(docker exec * mysqldump *)",
       
+      // MongoDB
       "Bash(mongo *)",
       "Bash(mongosh *)",
       "Bash(mongodump *)",
@@ -658,12 +709,14 @@
       "Bash(docker exec * mongo *)",
       "Bash(docker exec * mongosh *)",
       
+      // SQLite
       "Bash(sqlite3 *)",
       "Bash(sqlite3 * .dump*)",
       "Bash(sqlite3 * < *)",
       "Bash(sqlite3 * '.tables'*)",
       "Bash(sqlite3 * '.schema'*)",
       
+      // Redis
       "Bash(redis-cli *)",
       "Bash(redis-cli -h * -p *)",
       "Bash(redis-cli ping*)",
@@ -671,16 +724,19 @@
       "Bash(redis-cli monitor*)",
       "Bash(docker exec * redis-cli *)",
       
+      // Environment variable generation
       "Bash(openssl rand -hex 32*)",
       "Bash(openssl rand -base64 *)",
       "Bash(uuidgen*)",
       "Bash(pwgen *)",
       
+      // Certificate operations
       "Bash(openssl x509 -noout -text -in *)",
       "Bash(openssl x509 -noout -dates -in *)",
       "Bash(openssl x509 -noout -subject -in *)",
       "Bash(openssl verify *)",
       
+      // Testing operations
       "Bash(npm test -- --coverage*)",
       "Bash(npm test -- --watch*)",
       "Bash(npm test -- --no-coverage*)",
@@ -688,6 +744,8 @@
       "Bash(npx jest *)",
       "Bash(npm run test:*)",
       
+      // ===== DEVELOPMENT ENVIRONMENT TOOLS =====
+      // Python operations
       "Bash(python *)",
       "Bash(python3 *)",
       "Bash(pip *)",
@@ -695,6 +753,7 @@
       "Bash(python -m *)",
       "Bash(python3 -m *)",
       
+      // Version Managers
       "Bash(nvm *)",
       "Bash(nvm install *)",
       "Bash(nvm use *)",
@@ -723,12 +782,14 @@
       "Bash(asdf local *)",
       "Bash(asdf list*)",
       
+      // Environment Management
       "Bash(direnv *)",
       "Bash(direnv allow*)",
       "Bash(direnv deny*)",
       "Bash(direnv status*)",
       "Bash(direnv reload*)",
       
+      // Terminal Multiplexers
       "Bash(tmux *)",
       "Bash(tmux new*)",
       "Bash(tmux attach*)",
@@ -742,38 +803,45 @@
       "Bash(screen -ls*)",
       "Bash(screen -X *)",
       
+      // Port checking
       "Bash(lsof -i :*)",
       "Bash(sudo lsof -i :*)",
       "Bash(netstat -an | grep *)",
       "Bash(ss -an | grep *)",
       "Bash(nc -zv * *)",
       
+      // Log viewing
       "Bash(tail -f logs/*)",
       "Bash(tail -f *.log*)",
       "Bash(grep -i error logs/*)",
       "Bash(grep -i warn logs/*)",
       "Bash(journalctl -xeu *)",
       
+      // Memory and disk operations  
       "Bash(df -h*)",
       "Bash(du -sh *)",
       "Bash(du -h --max-depth=*)",
       "Bash(free -m*)",
       "Bash(free -h*)",
       
+      // Docker volume operations
       "Bash(docker volume ls | grep *)",
       "Bash(docker volume inspect * | jq*)",
       "Bash(docker volume rm $(docker volume ls -q)*)",
       
+      // Multiple service operations
       "Bash(for * in *; do *; done*)",
       "Bash(while *; do *; done*)",
       "Bash(if *; then *; fi*)",
       "Bash(case * in *) *;; esac*)",
       
+      // Background operations
       "Bash(* &)",
       "Bash(nohup * &)",
       "Bash(* > /dev/null 2>&1 &)",
       "Bash(disown*)",
       
+      // String manipulation
       "Bash(echo * | tr *)",
       "Bash(echo * | sed *)",
       "Bash(echo * | awk *)",
@@ -781,17 +849,20 @@
       "Bash(echo * | base64*)",
       "Bash(echo * | base64 -d*)",
       
+      // HTTP tools
       "Bash(http-server *)",
       "Bash(python -m http.server *)",
       "Bash(python3 -m http.server *)",
       "Bash(npx http-server *)",
       
+      // Make operations
       "Bash(make *)",
       "Bash(make clean*)",
       "Bash(make build*)",
       "Bash(make install*)",
       "Bash(make test*)",
       
+      // Yarn operations
       "Bash(yarn *)",
       "Bash(yarn install*)",
       "Bash(yarn add *)",
@@ -800,77 +871,92 @@
       "Bash(yarn test*)",
       "Bash(yarn build*)",
       
+      // PNPM operations
       "Bash(pnpm *)",
       "Bash(pnpm install*)",
       "Bash(pnpm add *)",
       "Bash(pnpm run *)",
       
+      // Environment file operations
       "Bash(cat .env*)",
       "Bash(grep * .env*)",
       "Bash(echo * >> .env*)",
       "Bash(cp .env.example .env*)",
       "Bash(cp .env .env.backup*)",
       
+      // Docker network operations
       "Bash(docker network *)",
       "Bash(docker network ls*)",
       "Bash(docker network inspect *)",
       "Bash(docker network create *)",
       "Bash(docker network rm *)",
       
+      // Service health checks
       "Bash(curl -f http://localhost:*/health*)",
       "Bash(curl -f http://localhost:*/api/health*)",
       "Bash(curl -f http://localhost:*/metrics*)",
       "Bash(wget -O- http://localhost:*/health*)",
       
+      // Git operations with remote
       "Bash(git remote show origin*)",
       "Bash(git ls-remote *)",
       "Bash(git fetch --prune*)",
       "Bash(git gc*)",
       "Bash(git reflog*)",
       
+      // SSH key operations
       "Bash(ssh-keygen *)",
       "Bash(ssh-add *)",
       "Bash(ssh-keyscan *)",
       "Bash(ssh-copy-id *)",
       
+      // Timezone operations
       "Bash(timedatectl*)",
       "Bash(date -u*)",
       "Bash(TZ=* date*)",
       
+      // Hash operations
       "Bash(md5sum *)",
       "Bash(sha1sum *)",
       "Bash(sha256sum *)",
       "Bash(sha512sum *)",
       "Bash(shasum *)",
       
+      // Backup operations
       "Bash(tar -czf * *)",
       "Bash(tar -xzf *)",
       "Bash(tar -tvf *)",
       "Bash(zip -r * *)",
       "Bash(unzip -l *)",
       
+      // Permission checks
       "Bash(stat *)",
       "Bash(getfacl *)",
       "Bash(file *)",
       "Bash(file -b *)",
       
+      // Package info
       "Bash(npm ls *)",
       "Bash(npm info *)",
       "Bash(npm view *)",
       "Bash(npm outdated*)",
       
+      // Process monitoring
       "Bash(pidof *)",
       "Bash(pstree *)",
       "Bash(lsof -p *)",
       "Bash(strace -p *)",
       
+      // Cron operations
       "Bash(crontab -l*)",
       "Bash(crontab -e*)",
       "Bash(cat /etc/cron*)",
       
+      // Service discovery
       "Bash(avahi-browse *)",
       "Bash(mdns-scan*)",
       
+      // Performance monitoring
       "Bash(iotop*)",
       "Bash(iftop*)",
       "Bash(nethogs*)",
@@ -878,11 +964,13 @@
       "Bash(vmstat*)",
       "Bash(iostat*)",
       
+      // Text editors (view mode)
       "Bash(nano -v *)",
       "Bash(vim -R *)",
       "Bash(view *)",
       "Bash(less +F *)",
       
+      // ===== FILE TOOLS =====
       "Read(**)",
       "Edit(**)",
       "MultiEdit(**)",
@@ -891,9 +979,11 @@
       "Grep(**)",
       "LS(**)",
       
+      // ===== NOTEBOOK TOOLS =====
       "NotebookRead(**)",
       "NotebookEdit(**)",
       
+      // ===== WEB TOOLS =====
       "WebFetch(domain:docs.anthropic.com)",
       "WebFetch(domain:localhost)",
       "WebFetch(domain:127.0.0.1)",
@@ -905,6 +995,8 @@
       "WebFetch(domain:api.anthropic.com)",
       "WebSearch(**)",
       
+      // ===== CLOUD PROVIDER CLIs =====
+      // AWS CLI
       "Bash(aws *)",
       "Bash(aws s3 *)",
       "Bash(aws ec2 *)",
@@ -920,6 +1012,7 @@
       "Bash(aws ecs *)",
       "Bash(aws eks *)",
       
+      // Google Cloud
       "Bash(gcloud *)",
       "Bash(gcloud auth *)",
       "Bash(gcloud config *)",
@@ -934,6 +1027,7 @@
       "Bash(gcloud services *)",
       "Bash(gsutil *)",
       
+      // Azure CLI
       "Bash(az *)",
       "Bash(az login*)",
       "Bash(az account *)",
@@ -947,6 +1041,7 @@
       "Bash(az acr *)",
       "Bash(az keyvault *)",
       
+      // Vercel
       "Bash(vercel *)",
       "Bash(vercel deploy*)",
       "Bash(vercel dev*)",
@@ -957,6 +1052,7 @@
       "Bash(vercel logs*)",
       "Bash(vc *)",
       
+      // Netlify
       "Bash(netlify *)",
       "Bash(netlify deploy*)",
       "Bash(netlify dev*)",
@@ -967,6 +1063,7 @@
       "Bash(netlify status*)",
       "Bash(ntl *)",
       
+      // Heroku
       "Bash(heroku *)",
       "Bash(heroku create*)",
       "Bash(heroku deploy*)",
@@ -978,16 +1075,20 @@
       "Bash(heroku domains*)",
       "Bash(heroku releases*)",
       
+      // ===== TODO TOOLS =====
       "TodoRead()",
       "TodoWrite(**)",
       
+      // ===== TASK TOOL =====
       "Task(**)",
       
+      // ===== CLAUDE SPECIFIC =====
       "Bash(claude *)",
       "Bash(claude config *)",
       "Bash(claude code *)"
     ],
     "deny": [
+      // ===== DESTRUCTIVE OPERATIONS =====
       "Bash(rm -rf /*)",
       "Bash(rm -rf /)",
       "Bash(sudo rm -rf /*)",
@@ -998,14 +1099,17 @@
       "Bash(fdisk*)",
       "Bash(parted*)",
       
+      // ===== FORK BOMBS =====
       "Bash(:(){ :|:& };:*)",
       "Bash(*fork*bomb*)",
       
+      // ===== SYSTEM CORRUPTION =====
       "Bash(> /dev/sda*)",
       "Bash(> /dev/nvme*)",
       "Bash(> /dev/sd*)",
       "Bash(cat /dev/urandom > *)",
       
+      // ===== CREDENTIAL THEFT =====
       "Bash(* | nc -l*)",
       "Bash(* | netcat -l*)",
       "Bash(* | socat *)",
@@ -1016,6 +1120,7 @@
       "Bash(wget * | sh*)",
       "Bash(wget * | bash*)",
       
+      // ===== USER MANAGEMENT =====
       "Bash(sudo passwd*)",
       "Bash(passwd*)",
       "Bash(sudo useradd*)",
@@ -1026,6 +1131,7 @@
       "Bash(sudo adduser*)",
       "Bash(sudo deluser*)",
       
+      // ===== SYSTEM MODIFICATION =====
       "Bash(sudo chmod 777 /*)",
       "Bash(sudo chown * /*)",
       "Bash(sudo rm /etc/*)",
@@ -1034,17 +1140,20 @@
       "Bash(sudo rm /usr/*)",
       "Bash(sudo > /etc/*)",
       
+      // ===== NETWORK BACKDOORS =====
       "Bash(nc -l*)",
       "Bash(netcat -l*)",
       "Bash(socat*)",
       "Bash(nmap*)",
       "Bash(masscan*)",
       
+      // ===== CRYPTO MINING =====
       "Bash(*xmrig*)",
       "Bash(*monero*)",
       "Bash(*bitcoin*)",
       "Bash(*miner*)",
       
+      // ===== GIT DANGEROUS OPS =====
       "Bash(git push --force origin master*)",
       "Bash(git push --force origin main*)",
       "Bash(git push -f origin master*)",
@@ -1052,14 +1161,17 @@
       "Bash(git reset --hard origin/master*)",
       "Bash(git reset --hard origin/main*)",
       
+      // ===== AWS/CLOUD CREDENTIAL ACCESS =====
       "Bash(cat ~/.aws/*)",
       "Bash(cat ~/.ssh/id_*)",
       "Bash(cat /root/.ssh/*)",
       
+      // ===== ENVIRONMENT VARIABLE DUMPS =====
       "Bash(env | base64*)",
       "Bash(printenv | base64*)",
       "Bash(set | base64*)",
       
+      // ===== REVERSE SHELLS =====
       "Bash(bash -i >& /dev/tcp/*)",
       "Bash(sh -i >& /dev/tcp/*)",
       "Bash(python -c 'import socket*)",
@@ -1067,6 +1179,7 @@
       "Bash(ruby -rsocket*)",
       "Bash(perl -e 'use Socket*)",
       
+      // ===== DANGEROUS DOCKER OPERATIONS =====
       "Bash(docker run --privileged *)",
       "Bash(docker run --pid=host *)",
       "Bash(docker run --net=host *)",
@@ -1074,6 +1187,7 @@
       "Bash(docker run -v /etc:/etc *)",
       "Bash(docker run -v /var/run/docker.sock:/var/run/docker.sock *)",
       
+      // ===== CREDENTIAL EXPOSURE =====
       "Bash(history | grep -i password*)",
       "Bash(history | grep -i token*)",
       "Bash(history | grep -i secret*)",
@@ -1084,6 +1198,7 @@
       "Bash(find / -name *.key*)",
       "Bash(find / -name *.pem*)",
       
+      // ===== SYSTEM SHUTDOWN =====
       "Bash(shutdown*)",
       "Bash(reboot*)",
       "Bash(halt*)",
@@ -1093,53 +1208,63 @@
       "Bash(sudo shutdown*)",
       "Bash(sudo reboot*)",
       
+      // ===== FIREWALL DISABLING =====
       "Bash(sudo ufw disable*)",
       "Bash(sudo iptables -F*)",
       "Bash(sudo iptables --flush*)",
       "Bash(sudo systemctl stop firewalld*)",
       "Bash(sudo service iptables stop*)",
       
+      // ===== MALICIOUS DOWNLOADS =====
       "Bash(curl * | sudo *)",
       "Bash(wget * | sudo *)",
       "Bash(curl -s * | sh*)",
       "Bash(wget -qO- * | sh*)",
       
+      // ===== LOG DELETION =====
       "Bash(rm /var/log/*)",
       "Bash(rm -rf /var/log/*)",
       "Bash(> /var/log/*)",
       "Bash(echo > /var/log/*)",
       "Bash(truncate -s 0 /var/log/*)",
       
+      // ===== PACKAGE MANAGER ABUSE =====
       "Bash(npm install -g * --unsafe-perm*)",
       "Bash(pip install * --break-system-packages*)",
       "Bash(gem install * --no-user-install*)",
       
+      // ===== KERNEL MODIFICATIONS =====
       "Bash(insmod *)",
       "Bash(rmmod *)",
       "Bash(modprobe *)",
       "Bash(sysctl -w *)",
       
+      // ===== DANGEROUS FILE OPERATIONS =====
       "Bash(chmod -R 777 /*)",
       "Bash(chmod 777 /etc/*)",
       "Bash(chmod 777 /bin/*)",
       "Bash(chmod 777 /usr/*)",
       "Bash(chown -R * /*)",
       
+      // ===== BITCOIN/CRYPTO OPERATIONS =====
       "Bash(*bitcoin-cli*)",
       "Bash(*ethereum*)",
       "Bash(*wallet.dat*)",
       "Bash(*privatekey*)",
       
+      // ===== MASS DELETION =====
       "Bash(find / -type f -delete*)",
       "Bash(find / -type d -delete*)",
       "Bash(rm -rf /home/*)",
       "Bash(rm -rf /var/*)",
       "Bash(rm -rf /opt/*)",
       
+      // ===== PROCESS INJECTION =====
       "Bash(gdb -p *)",
       "Bash(ptrace *)",
       "Bash(LD_PRELOAD=*)",
       
+      // ===== SUDO BYPASS ATTEMPTS =====
       "Bash(sudo -l*)",
       "Bash(sudo -V*)",
       "Bash(sudo su*)",
@@ -1147,22 +1272,27 @@
       "Bash(sudo -i*)",
       "Bash(pkexec *)",
       
+      // ===== DANGEROUS ENV EXPORTS =====
       "Bash(export PATH=*)",
       "Bash(export LD_LIBRARY_PATH=*)",
       "Bash(export PYTHONPATH=*)",
       
+      // ===== CONTAINER ESCAPE ATTEMPTS =====
       "Bash(nsenter *)",
       "Bash(docker run --cap-add=ALL *)",
       "Bash(docker run --security-opt *)",
       
+      // ===== DANGEROUS SYSTEMD OPERATIONS =====
       "Bash(systemctl mask *)",
       "Bash(systemctl disable *)",
       "Bash(systemctl daemon-reload*)",
       
+      // ===== CLOUD METADATA ACCESS =====
       "Bash(curl http://169.254.169.254/*)",
       "Bash(wget http://169.254.169.254/*)",
       "Bash(curl http://metadata.google.internal/*)",
       
+      // ===== DANGEROUS REDIRECTS =====
       "Bash(exec < /dev/tcp/*)",
       "Bash(exec > /dev/tcp/*)",
       "Bash(exec 3<>/dev/tcp/*)"
