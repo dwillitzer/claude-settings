@@ -970,6 +970,34 @@
       "Bash(view *)",
       "Bash(less +F *)",
       
+      // ===== CLAUDE TOOLS =====
+      // File content manipulation
+      "Edit(**)": "Allow Edit tool usage on any file/directory",
+      "Write(**)": "Allow Write access for any file/directory",
+      "MultiEdit(**)": "Allow multi-file editing capability",
+      
+      // File system navigation and search
+      "Glob(**)": "Allow listing files matching patterns",
+      "Grep(**)": "Allow searching file contents for patterns",
+      "LS(**)": "Allow listing directory contents",
+      
+      // File content access
+      "Read(**)": "Allow reading from any file",
+      "NotebookRead(**)": "Allow reading from notebook files",
+      "NotebookEdit(**)": "Allow editing notebook files",
+      
+      // Web access capabilities
+      "WebSearch(**)": "Allow internet search capabilities",
+      "WebFetch(domain:*)": "Allow fetching from approved domains",
+      
+      // Task management
+      "TodoRead()": "Allow reading from todo lists",
+      "TodoWrite(**)": "Allow writing to todo lists",
+      
+      // Agent capabilities
+      "Agent(**)": "Allow delegating to specialized agents",
+      "Task(**)": "Allow creating and managing tasks",
+      
       // ===== FILE TOOLS =====
       "Read(**)",
       "Edit(**)",
@@ -1088,6 +1116,23 @@
       "Bash(claude code *)"
     ],
     "deny": [
+      // ===== CLAUDE TOOLS RESTRICTIONS =====
+      // Sensitive file protection
+      "Edit(**/etc/**)",
+      "Edit(**/.ssh/**)",
+      "Edit(**/.env*)",
+      "Edit(**/*secret*)",
+      "Write(**/etc/**)",
+      "Write(**/.ssh/**)",
+      "Write(**/.env*)",
+      "Write(**/*secret*)",
+      "MultiEdit(**/etc/**)",
+      
+      // Domain restrictions
+      "WebFetch(domain:internal-*)",
+      "WebFetch(domain:*-internal.*)",
+      "WebFetch(domain:*.local)",
+      
       // ===== DESTRUCTIVE OPERATIONS =====
       "Bash(rm -rf /*)",
       "Bash(rm -rf /)",
