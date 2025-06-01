@@ -1,0 +1,171 @@
+# Claude Code Permissions Configuration
+# Organized by permission tiers with security considerations
+
+#=========================================
+# TIER 1: READ-ONLY OPERATIONS
+# No approval required
+#=========================================
+
+# File Reading Operations
+READ_OPERATIONS = [
+    # Directory Operations
+    "Bash(ls*)",              # Basic listing
+    "Bash(ls -la*)",          # Detailed listing with permissions
+    "Bash(ls -l*)",           # Long format listing
+    "Bash(ls -lh*)",          # Human readable sizes
+    
+    # File Content Viewing
+    "Bash(cat *)",            # File contents (preferred method)
+    "Bash(cat -n *)",         # Numbered output
+    "Bash(head *)",           # View file start
+    "Bash(tail *)",           # View file end
+    
+    # Search Operations
+    "Bash(grep *)",           # Basic search
+    "Bash(grep -r *)",        # Recursive search
+    "Bash(grep -i *)",        # Case-insensitive
+    "Bash(find . -name *)",   # File discovery
+    "Bash(find . -type *)",   # Type-based search
+]
+
+# Status & Monitoring
+STATUS_OPERATIONS = [
+    # Docker Status
+    "Bash(docker ps)",        # Running containers
+    "Bash(docker ps -a*)",    # All containers
+    "Bash(docker logs *)",    # Container logs
+    
+    # Git Status
+    "Bash(git status*)",      # Repository status
+    "Bash(git log*)",         # Commit history
+    "Bash(git diff*)",        # Changes
+    
+    # System Status
+    "Bash(df -h*)",          # Disk usage
+    "Bash(free -h*)",        # Memory status
+    "Bash(ps aux*)",         # Process list
+    "Bash(top*)",           # System monitor
+]
+
+#=========================================
+# TIER 2: BASH COMMANDS
+# Requires approval per use
+#=========================================
+
+# Docker Operations
+DOCKER_OPERATIONS = [
+    # Container Management
+    "Bash(docker run *)",     # Create containers
+    "Bash(docker exec *)",    # Execute in container
+    "Bash(docker stop *)",    # Stop containers
+    "Bash(docker rm *)",      # Remove containers
+    
+    # Image Operations
+    "Bash(docker build *)",   # Build images
+    "Bash(docker pull *)",    # Pull images
+    "Bash(docker push *)",    # Push images
+    
+    # Compose Operations
+    "Bash(docker compose up*)",    # Start services
+    "Bash(docker compose down*)",  # Stop services
+    "Bash(docker compose logs*)",  # View logs
+]
+
+# Development Tools
+DEV_TOOLS = [
+    # NPM Operations
+    "Bash(npm install*)",     # Install packages
+    "Bash(npm run *)",        # Run scripts
+    "Bash(npm test*)",        # Run tests
+    
+    # Git Operations
+    "Bash(git add *)",        # Stage changes
+    "Bash(git commit *)",     # Commit changes
+    "Bash(git push*)",        # Push changes
+    "Bash(git pull*)",        # Pull changes
+    
+    # Build Tools
+    "Bash(make *)",          # Build automation
+    "Bash(yarn *)",          # Alternative package manager
+]
+
+# System Operations
+SYSTEM_OPS = [
+    "Bash(systemctl status *)", # Service status
+    "Bash(journalctl *)",      # Log viewing
+    "Bash(netstat *)",         # Network statistics
+    "Bash(curl *)",            # HTTP requests
+]
+
+#=========================================
+# TIER 3: FILE MODIFICATION
+# Requires approval until session end
+#=========================================
+
+# File Modifications
+FILE_MODIFICATIONS = [
+    # Basic Operations
+    "Edit(**)",              # Single file edit
+    "Write(**)",            # File writing
+    "MultiEdit(**)",        # Multiple file edits
+    
+    # File Management
+    "Bash(mkdir *)",        # Create directories
+    "Bash(cp *)",           # Copy files
+    "Bash(mv *)",           # Move files
+]
+
+# Configuration Changes
+CONFIG_CHANGES = [
+    # Version Control Config
+    "Bash(git config *)",    # Git configuration
+    "Bash(git remote *)",    # Remote management
+    
+    # Package Management Config
+    "Bash(npm config *)",    # NPM configuration
+    "Bash(yarn config *)",   # Yarn configuration
+    
+    # Container Config
+    "Bash(docker config *)", # Docker configuration
+]
+
+#=========================================
+# SECURITY CONSIDERATIONS
+#=========================================
+
+# Critical Security Patterns
+SECURITY_REQUIREMENTS = [
+    "Always use 'cat' for file contents",
+    "No direct access to credential files",
+    "No dangerous redirects or pipes to shell",
+    "No system-wide modifications",
+    "No privileged container operations",
+    "No unauthorized sudo usage",
+]
+
+# High-Risk Operations (Always Denied)
+CRITICAL_DENIALS = [
+    # System Protection
+    "Bash(rm -rf /*)",                    # System deletion
+    "Bash(chmod 777 /*)",                 # Unsafe permissions
+    "Bash(> /dev/sd*)",                   # Device corruption
+    
+    # Security Protection
+    "Bash(docker run --privileged *)",    # Privileged containers
+    "Bash(sudo su*)",                     # Privilege escalation
+    "Bash(sudo passwd*)",                 # Password changes
+    
+    # Network Protection
+    "Bash(nc -l*)",                       # Network listening
+    "Bash(curl * | sudo *)",              # Dangerous downloads
+    
+    # Credential Protection
+    "Bash(cat ~/.aws/*)",                 # AWS credentials
+    "Bash(cat ~/.ssh/id_*)",              # SSH keys
+    "Bash(history | grep -i password*)",  # Password hunting
+]
+
+# Note: See settings.jsonc for complete allow/deny lists
+# This configuration implements principle of least privilege
+# and defense in depth approach to security
+

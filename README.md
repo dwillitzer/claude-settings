@@ -250,3 +250,60 @@ Please ensure any new patterns follow the existing format and include both allow
 ## License
 
 MIT License - This configuration is provided as-is for the Claude Code community. Use at your own discretion.
+
+## Repository Structure
+
+The repository is organized as follows:
+
+```
+.
+├── config/                 # Configuration files
+│   ├── settings.json      # Core settings
+│   ├── settings.jsonc     # Core settings with comments
+│   └── permissions.allow  # Permission configuration
+├── docs/                  # Documentation
+│   ├── CLAUDE.md         # Claude-specific documentation
+│   └── permissions_report.md
+├── scripts/              # Installation and setup scripts
+│   ├── install-wrapper.sh
+│   ├── uninstall-wrapper.sh
+│   ├── setup-claude-aliases.sh
+│   └── fix-aliases.sh
+├── src/                  # Source code
+│   ├── tools/           # Additional tools and utilities
+│   └── wrappers/        # Claude wrapper implementations
+└── README.md            # This file
+
+```
+
+### Core Files
+These files are essential for the system and are version controlled:
+- `config/settings.json` - Core settings file
+- `config/settings.jsonc` - Core settings with documentation
+- `config/permissions.allow` - Permission configuration
+- `src/wrappers/claude-wrapper.py` - Main wrapper implementation
+- `src/wrappers/claude-wrapper.sh` - Shell wrapper
+- `scripts/install-wrapper.sh` - Installation script
+- `scripts/uninstall-wrapper.sh` - Uninstallation script
+
+### Development Files
+Development-related files are ignored by git:
+- `.idea/` - IDE settings
+- `*.local.*` - Local configuration files
+- `*.personal.*` - Personal settings
+- `*.dev.*` - Development-specific files
+- Generated documentation
+- Temporary files
+- Log files
+
+### Configuration
+- Local settings should use `.local.json` suffix
+- Development settings should use `.dev.json` suffix
+- Personal configurations should use `.personal.json` suffix
+- All local, development, and personal files are git-ignored
+
+### Contributing
+1. Do not commit personal or local configuration files
+2. Keep core files in version control
+3. Place development tools in `src/tools/`
+4. Document any new configuration patterns in `docs/`

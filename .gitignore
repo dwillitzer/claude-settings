@@ -1,21 +1,141 @@
-# OS files
+# OS Generated Files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+Desktop.ini
 
-# Editor files
+# Editor/IDE Files
+.idea/
+.vscode/
 *.swp
 *.swo
 *~
-.vscode/
-.idea/
+*.sublime-workspace
+*.sublime-project
+.project
+.settings/
+.classpath
+.factorypath
+*.iml
+*.iws
+*.ipr
 
-# Logs
+# Logs and Databases
 *.log
+*.sqlite
+*.db
+logs/
+*.log.*
 
-# Temporary files
+# Temporary Files
 *.tmp
 *.temp
+.tmp/
+temp/
+tmp/
 
-# Personal settings (if you have variations)
+# Build and Dependency Directories
+node_modules/
+dist/
+build/
+out/
+target/
+.gradle/
+vendor/
+*.class
+*.jar
+*.war
+
+# Environment Files
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+*.env
+
+# Personal and Local Settings
 settings.personal.json
 settings.local.json
+settings.dev.json
+settings.development.json
+*.local.json
+*.personal.json
+*.private.json
+
+# Cache and Package Files
+.cache/
+.npm/
+.pnpm-store/
+yarn-error.log
+.yarn-integrity
+.pnp.*
+.webpack/
+.next/
+.nuxt/
+
+# Testing and Coverage
+coverage/
+.nyc_output/
+junit.xml
+test-results/
+*.lcov
+.coverage
+htmlcov/
+
+# Documentation Generation
+docs/_build/
+_site/
+.docusaurus/
+.cache/
+.vuepress/dist/
+
+# Backup Files
+*.bak
+*.backup
+*.[Bb]ak
+*.old
+*.orig
+*.rej
+*.patch
+*.diff
+
+# System Files
+.directory
+.fuse_hidden*
+.nfs*
+.metadata/
+
+# Miscellaneous Development Files
+*.pid
+*.seed
+*.pid.lock
+.eslintcache
+.stylelintcache
+.env.*.local
+.history/
+.project
+*.tsbuildinfo
+.vercel
+.now/
+
+# Generated Files
+generated/
+*.generated.*
+
+# Project specific
+src/wrappers/*.local.*
+config/*.local.*
+config/*.dev.*
+config/settings.personal.json*
+config/settings.development.json*
+
+# Keep these files
+!config/settings.json
+!config/settings.jsonc
+!config/permissions.allow
